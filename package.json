@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": ">=14 <15"
+  },
   "scripts": {
-    "start": "nodemon -e js,ejs,html -w . -w public -w views -w routes -w models server.js"
+     "start": "node app.js"
   },
   "keywords": [],
   "author": "",
