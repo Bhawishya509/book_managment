@@ -1,0 +1,94 @@
+<%- include("../partials/Nav.ejs") %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+    <style>
+         .containers {
+      width: 98.76vw;
+        height: 92vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-image: linear-gradient(rgb(122, 241, 209),rgb(156, 156, 248)); */
+        background-color: #39B39E;
+      }
+      .login_form_main_block
+      {
+        width: 40%;
+        border: 1px solid gray;
+        padding: 3%;
+        border-radius: 8px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        background-color: #EBFFF7;
+        box-shadow: 0px 3px 11px 1px black;
+        
+      }
+      h1
+      {
+        color: #39B39E;
+      }
+      .form-link
+      {
+        margin-top: 2%;
+        text-decoration: none;
+        color: #39B39E;
+      }
+      .form-label
+      {
+        color: #39B39E;
+      }
+
+    </style>
+</head>
+<body>
+    <main class="containers">
+        <section class="login_form_main_block">
+        <h1 class="login-heading">Login</h1>
+        <form action="/login" class="row g-6 needs-validation" validate method="post" >
+            <div class="col-md-12">
+                <label for="validationCustom01" class="form-label"
+                  >Email/UserName</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom01"
+                  required
+                  name="anydata"
+                  autocomplete=off
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="validationCustom01" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="validationCustom01"
+                  required
+                  name="password"
+                  autocomplete=off
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            <a class="form-link" href="/forgot-password" >Forgot Password?</a><br>
+            <a class="form-link" href="/resend-verification">Resend Verification Link</a>
+            
+            <div class="col-12 mt-3">
+                <button  class="btn btn-outline-success" type="submit">Login</button>
+              </div>
+        </form>
+        </section>
+    </main>
+</body>
+</html>

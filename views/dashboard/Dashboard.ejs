@@ -1,0 +1,150 @@
+<%- include("../partials/Nav.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <style>
+    .main_block
+    {
+        height: 100%;
+        width: 98vw;
+     
+        display: flex;
+        flex-direction: column;
+      
+   
+    }
+
+
+    .take_input_book_main_block
+    {
+             height: 10%;
+             width: 100%;
+             display: flex;
+             justify-content: center;
+             
+    }
+    .row
+    {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    
+
+    }
+    .book_text_main_block
+    {
+        width: 100%;
+        height: 100%;
+        
+    }
+    .book_block_main
+    {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    
+   
+        
+     
+       
+    }
+  </style>
+</head>
+<body>
+
+<main class="main_block container-fluid">
+ <header>
+    <h2 style="color: #39B39E;"> Inventory Mangement</h2>
+    <hr>
+    
+    
+ </header>
+    <section class="take_input_book_main_block">
+        <form action="/dashboard" class="row g-6 needs-validation container-fluid" validate method="post" >
+
+            <div class="col-md-2">
+                <label for="validationCustom01" class="form-label"
+                  >Title</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom01"
+                  required
+                  name="title"
+                  placeholder="Enter Title here"
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-2">
+                <label for="validationCustom01" class="form-label"
+                  >Author</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom01"
+                  required
+                  name="author"
+                  placeholder="Enter author here"
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-2">
+                <label for="validationCustom01" class="form-label"
+                  >Prize</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="validationCustom01"
+                  required
+                  name="prize"
+                  placeholder="Enter Prize"
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-2">
+                <label for="validationCustom01" class="form-label"
+                  >Category</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom01"
+                  required
+                  name="category"
+                  placeholder="Enter Category"
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-1 mt-4 ">
+                <button  class="btn btn-primary btn-xl" type="submit">AddBook</button>
+              </div>
+        </form>
+    </section>
+    <hr>
+    <section class="book_text_main_block">
+
+        <h2> All Books</h2>
+        <div class="book_block_main">
+          
+          <%for(let i of data)
+          {%>
+      <%- include("../partials/Bookblock.ejs",{datas:i}) %>
+     <%} %>
+          
+        </div>
+    </section>
+</main>
+</body>
+</html>
