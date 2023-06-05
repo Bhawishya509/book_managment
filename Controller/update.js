@@ -1,6 +1,12 @@
 import mongoose from "mongoose";
 import {dashboardshema} from "../Schema/dashboardshema.js"
-mongoose.connect("mongodb://0.0.0.0:27017/mangment")
+const pass = "Bhawishya11";
+const collection_name = "ecom";
+const mongo = `mongodb+srv://Bhawishya:${pass}@cluster0.ehz40xr.mongodb.net/${collection_name}?retryWrites=true&w=majority`;
+mongoose.connect(mongo, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true, 
+});
 const updatedata = async(req, res) =>
 {
     const { title, author, prize, category,_id } = req.body;

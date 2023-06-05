@@ -18,5 +18,5 @@ route.post("/update",updatedata)
 route.post("/login",verifypass,logincon)
 route.post("/Register",verify,regcon)
 
-route.post("/dashboard",verifydash, dashcon) 
+route.post("/dashboard", verifydash, dashcon) 
 export {route}
