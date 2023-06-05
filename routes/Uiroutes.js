@@ -9,7 +9,7 @@ uiroute.get("/", (req, res) =>
     res.render("../views/home/home.ejs")
 })
 
-uiroute.get("/register_ui", (req, res) =>
+uiroute.get("https://bookmanagement-vg96.onrender.com/register_ui", (req, res) =>
 {
   
     res.render("../views/register/Register.ejs")
